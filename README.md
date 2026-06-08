@@ -33,12 +33,62 @@ Most of the framework consists of **strict guardrails** that shouldn't be altere
 
 ### 🛡️ Guardrail Files (Do Not Edit, Let the AI Read):
 The following files and directories enforce the principles of programming. The AI will read them automatically based on the context of your task.
-- **`/tools/security/`**: Rules for rate limiting, OWASP Top 10, Webhooks, Encryption at Rest, and API security.
-- **`/tools/compliance/`**: GDPR/CCPA privacy rules, password hashing, and PII masking.
-- **`/tools/frontend/`**: Guidelines for mobile-first responsiveness, Core Web Vitals, data sanitization, and internationalization (i18n).
-- **`/tools/performance/`**: Directives for modularity, background tasks, pagination, and caching.
-- **`/tools/recipes/`**: Standardized, step-by-step instructions for repetitive tasks like creating components or API routes.
-- **`/tools/skills.md`**: Defines specialized skills/plugins the AI is allowed to invoke (e.g., SAST tools, API contract testers).
+
+```text
+.
+└── tools
+    ├── accessibility
+    │   └── a11y.md
+    ├── api
+    │   └── api.md
+    ├── best-practices.md
+    ├── ci-cd
+    │   └── deployment.md
+    ├── compliance
+    │   └── privacy.md
+    ├── database
+    │   └── schema.md
+    ├── frontend
+    │   ├── i18n.md
+    │   └── ui.md
+    ├── images
+    │   ├── architecture
+    │   └── ui
+    ├── memory.md
+    ├── performance
+    │   └── performance.md
+    ├── project.md
+    ├── recipes
+    │   ├── new_api_route.md
+    │   └── new_component.md
+    ├── scripts.md
+    ├── security
+    │   └── security.md
+    ├── skills.md
+    └── testing
+        └── testing.md
+```
+
+#### Detailed Breakdown of Files:
+
+- **`accessibility/a11y.md`**: Enforces WCAG compliance, semantic HTML usage, ARIA roles, and keyboard navigation support.
+- **`api/api.md`**: Sets standards for API versioning (e.g., `/api/v1/`), semantic HTTP status codes, and maintaining OpenAPI/Swagger documentation.
+- **`best-practices.md`**: Mandates core programming principles such as SOLID, DRY, robust error handling (no silent failures), and descriptive naming conventions.
+- **`ci-cd/deployment.md`**: Defines CI/CD pipeline stages (lint -> test -> build -> deploy) and instructions for generating efficient Dockerfiles.
+- **`compliance/privacy.md`**: Ensures GDPR/CCPA compliance by instructing the agent to mask PII in logs and securely hash passwords.
+- **`database/schema.md`**: Requires the use of ORMs/query builders, enforces strict naming conventions, and mandates that all schema changes use migrations.
+- **`frontend/i18n.md`**: Instructs the agent to never hardcode strings in the UI, enforcing the use of localization files and translation hooks.
+- **`frontend/ui.md`**: Sets guidelines for mobile-first responsiveness, Core Web Vitals optimization, professional icons, brand colors, and data sanitization to prevent XSS.
+- **`images/architecture/ & ui/`**: Dedicated folders to store visual context, such as system design diagrams, database schemas, and UI mockups, for vision-capable agents.
+- **`memory.md`**: Acts as the AI's continuous learning log to store architectural decisions and solved bugs, preventing the repetition of past mistakes.
+- **`performance/performance.md`**: Contains rules for application scaling, including background task processing, code modularity, database pagination, and caching strategies.
+- **`project.md`**: The central brain and routing mechanism. It contains your tech stack definitions and the daily task prompt.
+- **`recipes/new_api_route.md`**: A templated step-by-step guide for scaffolding new backend endpoints securely.
+- **`recipes/new_component.md`**: A templated guide ensuring every new UI component follows standard practices, including test creation.
+- **`scripts.md`**: A list of approved, language-specific terminal commands (like running dev servers, tests, and linters) so the AI doesn't have to guess.
+- **`security/security.md`**: The non-negotiable security guardrails covering rate limiting, OWASP Top 10 mitigation, webhook security, `.env` secret management, and encryption at rest.
+- **`skills.md`**: Lists specialized plugins or capabilities the AI is authorized to invoke (e.g., SAST scanners, accessibility checkers).
+- **`testing/testing.md`**: Establishes testing requirements, including unit testing business logic, E2E testing for critical paths, and maintaining minimum code coverage.
 
 ## Getting Started
 
