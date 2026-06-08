@@ -16,22 +16,33 @@ When using this toolkit, focus your time on refining the **business logic**, the
 - UI/UX Design Guidelines (Responsiveness, A11y, i18n)
 - Scalable Architecture & Database Schemas
 
-## How to Use
+## Workflow Structure & Where to Modify
+
+The magic of this workflow relies on the central hub (`project.md`), which acts as an automatic router for your AI agent. When you issue a prompt via `project.md`, the AI analyzes the scope of your task, scans the entire `tools/` directory, and autonomously applies the relevant guardrails (e.g., pulling in `security.md` for backend tasks or `ui.md` for frontend tasks).
+
+Most of the framework consists of **strict guardrails** that shouldn't be altered unless your organization's standards change. However, there are a few specific places where you **must** interact with and edit the workflow:
+
+### 📝 Files You Need to Edit:
+1. **`tools/project.md` (The Brain):**
+   - **Where you work every day.** Define your **Tech Stack** at the top (Language, Framework, Package Manager).
+   - Write your daily prompts and business logic under the **Current Task** section.
+2. **`tools/scripts.md` (The Commands):**
+   - **Edit once per project.** This file contains standard terminal commands for various languages. Delete the languages that do not apply to your project so the AI only uses the correct scripts.
+3. **`tools/memory.md` (The Log):**
+   - **Review occasionally.** The AI will automatically log architectural decisions and bugs here. You can also manually edit this to add "gotchas" you want the AI to remember in future sessions.
+
+### 🛡️ Guardrail Files (Do Not Edit, Let the AI Read):
+The following files and directories enforce the principles of programming. The AI will read them automatically based on the context of your task.
+- **`/tools/security/`**: Rules for rate limiting, OWASP Top 10, Webhooks, Encryption at Rest, and API security.
+- **`/tools/compliance/`**: GDPR/CCPA privacy rules, password hashing, and PII masking.
+- **`/tools/frontend/`**: Guidelines for mobile-first responsiveness, Core Web Vitals, data sanitization, and internationalization (i18n).
+- **`/tools/performance/`**: Directives for modularity, background tasks, pagination, and caching.
+- **`/tools/recipes/`**: Standardized, step-by-step instructions for repetitive tasks like creating components or API routes.
+- **`/tools/skills.md`**: Defines specialized skills/plugins the AI is allowed to invoke (e.g., SAST tools, API contract testers).
+
+## Getting Started
 
 1. Copy the entire `tools/` folder into the root of your project.
-2. Update the `Tech Stack` section in `tools/project.md` to reflect your chosen language, framework, and package manager.
-3. Remove any irrelevant scripts from `tools/scripts.md`.
-4. When prompting your AI Coding Assistant (e.g., Cline, Antigravity, Cursor, Copilot), simply point it to `tools/project.md` and write your business logic under the **Current Task** section.
-
-*The AI agent will automatically scan the directory, pick up the relevant security, architecture, and UI guidelines, and execute your code flawlessly.*
-
-## Folder Structure
-
-- `/tools/project.md`: The brain of the operation and central prompt.
-- `/tools/security/`: Rules for Webhooks, APIs, Encryption, and Bot mitigation.
-- `/tools/compliance/`: GDPR/CCPA privacy rules and PII masking.
-- `/tools/frontend/`: UI guidelines, responsiveness, and i18n instructions.
-- `/tools/performance/`: Caching, background tasks, and modularity.
-- `/tools/recipes/`: Standardized workflows for components and APIs.
-- `/tools/memory.md`: Where the AI logs architectural decisions and bugs to avoid repeating mistakes.
-- `/tools/scripts.md`: Approved terminal commands for your tech stack.
+2. Open `tools/project.md` and define your **Tech Stack**.
+3. Open `tools/scripts.md` and remove the commands that don't apply to your stack.
+4. Point your AI Coding Assistant (e.g., Cline, Antigravity, Cursor, Copilot) to `tools/project.md` and start typing your first task!
