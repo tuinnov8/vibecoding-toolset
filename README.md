@@ -38,35 +38,35 @@ The following files and directories enforce the principles of programming. The A
 .
 └── tools
     ├── accessibility
-    │   └── a11y.md
+    │   └── a11y.md                 # Enforces WCAG compliance and ARIA roles
     ├── api
-    │   └── api.md
-    ├── best-practices.md
+    │   └── api.md                  # API versioning, HTTP status codes, Swagger docs
+    ├── best-practices.md           # SOLID, DRY, naming, and error handling rules
     ├── ci-cd
-    │   └── deployment.md
+    │   └── deployment.md           # CI/CD stages (lint->test->build->deploy) & Docker
     ├── compliance
-    │   └── privacy.md
+    │   └── privacy.md              # GDPR/CCPA rules, PII masking, password hashing
     ├── database
-    │   └── schema.md
+    │   └── schema.md               # ORM rules, migrations, naming conventions
     ├── frontend
-    │   ├── i18n.md
-    │   └── ui.md
-    ├── images
-    │   ├── architecture
-    │   └── ui
-    ├── memory.md
+    │   ├── i18n.md                 # Internationalization: no hardcoded strings
+    │   └── ui.md                   # Mobile-first design, Core Web Vitals, XSS prevention
+    ├── images                      # Context for vision-capable agents
+    │   ├── architecture            # System diagrams, DB schemas
+    │   └── ui                      # Mockups, wireframes
+    ├── memory.md                   # AI's log of architectural decisions & solved bugs
     ├── performance
-    │   └── performance.md
-    ├── project.md
+    │   └── performance.md          # Modularity, background tasks, pagination, caching
+    ├── project.md                  # Central brain: Tech stack & daily task prompt
     ├── recipes
-    │   ├── new_api_route.md
-    │   └── new_component.md
-    ├── scripts.md
+    │   ├── new_api_route.md        # Templated guide for scaffolding backend endpoints
+    │   └── new_component.md        # Templated guide for scaffolding UI components
+    ├── scripts.md                  # Approved terminal commands (npm, cargo, poetry, etc.)
     ├── security
-    │   └── security.md
-    ├── skills.md
+    │   └── security.md             # OWASP Top 10, rate limiting, encryption at rest
+    ├── skills.md                   # Allowed AI plugins (e.g., SAST scanners)
     └── testing
-        └── testing.md
+        └── testing.md              # Unit/E2E testing requirements & coverage thresholds
 ```
 
 #### Detailed Breakdown of Files:
